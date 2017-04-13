@@ -1,0 +1,30 @@
+<% provide(:title, 'Sign Up') %>
+<article>
+  <h1>Sign Up</h1>
+  <%= form_for @user, url: signup_path do |f| %>
+    <fieldset class="flex third center">
+      <label>
+        <%= f.text_field :email, options = { class: "", placeholder: "Email" } %>
+      </label>
+      <label>
+        <%= f.text_field :login, options = { class: "", placeholder: "Login" }  %>
+        <% if @user.errors[:login].any? %>
+          <ul>
+            <% for login_error in @user.errors[:login] %>
+              <li><%= login_error %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </label>
+      <label>
+        <%= f.password_field :password, options = { class: "", placeholder: "Password" } %>
+      </label>
+      <label>
+        <%= f.password_field :password_confirmation, options = { class: "", placeholder: "Password Confirmation" } %>
+      </label>
+      <label>
+        <%= f.submit "Sign Up", :class => "button" %>
+      </label>
+    </fieldset>
+  <% end %>
+</article>

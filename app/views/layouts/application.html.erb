@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title><%= full_title(yield(:title)) %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+
+		<%= csrf_meta_tags %>
+		<%= stylesheet_link_tag 'application', 'media': 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application','data-turbolinks-track': 'reload' %>
+	</head>
+	<body>
+		<nav id="user_nav">
+			<a href= <%= root_path %> class="brand">
+				<span>Workflower</span>
+			</a>
+			<input id="bmenu" type="checkbox" class="show" />
+			<label for="bmenu" class="burger toggle pseudo button">&#8801;</label>
+			<div class="menu">
+				<% if current_user %>
+					Logged as <%=current_user.login %>
+					<%= link_to 'Profile', profile_path, html_options = { class: "pseudo button" } %>
+					<%= link_to "Exit", signout_path, html_options = { class: "pseudo button" }  %>
+				<% else %>
+					<%= link_to "Sign Up", signup_path, html_options = { class: "pseudo button" } %>
+					<%= link_to "Sign In", signin_path, html_options = { class: "pseudo button" } %>
+				<% end %>
+			</div>
+		</nav>
+		<main class="content">
+			<%= yield %>
+		</main>
+		<footer class="content">
+			<article class="full">
+				<p>Workflower, 2017.</p>
+				<p>From <a href="//github.com/therealdevelopers">the real developers</a> with love.</p>
+			</article>
+		</footer>
+	</body>
+</html>
