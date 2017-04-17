@@ -1,3 +1,7 @@
 
 tmp/pids/
 /tmp
+
+log/
+
+*.sublime-workspace

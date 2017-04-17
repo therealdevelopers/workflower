@@ -1,8 +1,5 @@
 class SchedulesController < ApplicationController
-before_filter :find_parent
-
-
-end
+  before_action :find_parent
   def new
     @schedule = Schedule.new
   end
@@ -26,17 +23,12 @@ end
     @schedules = @parent.schedules
   end
 
-  def edit
-
-  end
-
-  def 
-
   private
   def find_parent
-  params.each do |name, value|
-    if name =~ /(.+)_id$/
-      @parent = $1.classify.constantize.find(value)
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        @parent = $1.classify.constantize.find(value)
+      end
     end
   end 
 end
