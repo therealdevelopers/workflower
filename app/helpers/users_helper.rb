@@ -15,8 +15,6 @@ module UsersHelper
 		user.save
 	end
 
-	
-
 	def resolve_remember remember
 		
 	end
