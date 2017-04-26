@@ -12,4 +12,4 @@
 //
 
 //= require turbolinks
-//
+//= require appendix

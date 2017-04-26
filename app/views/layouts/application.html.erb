@@ -11,12 +11,19 @@
 
 		<%# begin Turbolinks %>
 		<%= stylesheet_link_tag 'application', 'media': 'all', 'data-turbolinks-track': 'reload' %>
-		<%= javascript_include_tag 'application','data-turbolinks-track': 'reload' %>
 		<%# end   Turbolinks %>
 		
 		<%# begin CSRF %>
 		<%= csrf_meta_tags %>
 		<%# end   CSRF %>
+
+		<style type="text/css">
+			.transparent {
+				background: transparent;
+				box-shadow: none;
+			}
+
+		</style>
 	</head>
 	<body>
 		<%= render 'layouts/sidebar' %>
@@ -25,9 +32,10 @@
 		</main>
 		<footer id="footer">
 			<article>
-				<p>With <span style="color: salmon; font-weight: 800; font-size: 1.2em;">&#10084;</span> from <a href="//github.com/therealdevelopers">the Real Developers</a> and <a href="">others</a>.</p>
+				<p>With <span style="color: salmon; font-weight: 800; font-size: 1.2em;">&#10084;</span> from <a href="//github.com/therealdevelopers">the Real Developers</a> and <%= link_to 'others', credits_url, html_options = { class: "" } %>.</p>
 				<p>Workflower, 2017.</p>
 			</article>
 		</footer>
+		<%= javascript_include_tag 'application','data-turbolinks-track': 'reload' %>
 	</body>
 </html>
