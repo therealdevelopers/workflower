@@ -5,3 +5,5 @@ tmp/pids/
 log/
 
 *.sublime-workspace
+
+Gemfile\.lock
