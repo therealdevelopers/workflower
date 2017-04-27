@@ -16,25 +16,19 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   concern :schedulable do
-    resources :schedules, only: [:show, :edit, :update, :destroy, :new, :create] do
-      collection do
-        get 'list' => 'schedules#list'
-      end
-    end
+    resources :schedules, only: [:index, :show, :edit, :update, :destroy, :new, :create]
   end
   
   root :to => 'home#index'
 
-  resources :users, conserns: :schedulable, only: [:edit, :update, :destroy] do
-    collection do
-      get 'groups' => 'users#groups'
-    end
+  resources :users, only: [:edit, :update, :destroy] do
+    resources :groups, only: :index
+    resources :schedules, only: [:index, :show, :edit, :update, :destroy, :new, :create]
   end
 
-  resources :groups, conserns: :schedulable, only: [:edit, :update, :destroy, :new, :create] do
-    collection do
-      get 'users' => 'groups#users'
-    end
+  resources :groups, only: [:edit, :update, :destroy, :new, :create] do
+    resources :schedules, only: [:index, :show, :edit, :update, :destroy, :new, :create]
+    resources :users, only: :index
   end
   
 end
