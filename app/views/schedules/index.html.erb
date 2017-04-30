@@ -1,3 +1,15 @@
 <article>
-	This is a schedule index page.
+	<% if @schedules.empty? %>
+		You have not any schedules yet. Make the new one!
+	<% else %>
+		This is your schedules:
+		<ul>
+			<% @schedules.each do |schedule|%>
+				<li>
+					<%= schedule.title %>
+				</li>
+			<% end %>
+		</ul>
+		
+	<% end %>
 </article>

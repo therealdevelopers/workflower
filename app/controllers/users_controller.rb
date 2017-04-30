@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_new_params)
-		@user.schedules << Schedule.new(title: 'Main')
 		if sign_up @user
 			redirect_to root_url
 		else
