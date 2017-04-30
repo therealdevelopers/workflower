@@ -7,3 +7,5 @@ log/
 *.sublime-workspace
 
 Gemfile\.lock
+
+*.cache

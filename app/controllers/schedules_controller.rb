@@ -1,13 +1,18 @@
 class SchedulesController < ApplicationController
   before_action :find_parent
+
+  def index
+    @schedules = @parent.schedules
+  end
+
   def new
     @schedule = Schedule.new
   end
 
-  def create
+  def create 
+    render 'new' unless @schedule.valid?
+
     @parent.schedules << @schedule
-    
-    render 'new' unless @parent.save
   end
 
   def show
