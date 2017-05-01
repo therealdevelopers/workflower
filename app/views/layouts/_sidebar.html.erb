@@ -6,7 +6,10 @@
   <label for="bmenu" class="burger toggle pseudo button">&#8801;</label>
   <div class="menu">
     <% if current_user %>
-      Logged as <%=current_user.login %>
+      <p class="">
+        Signed as <%=current_user.login %>
+      </p>
+      <hr />
       <%= link_to 'Profile', profile_path, html_options = { class: "pseudo button" } %>
       <%= link_to 'Schedules', user_schedules_path(user_id: current_user.id), html_options = { class: "pseudo button" } %>
       <%= link_to "Exit", signout_path, html_options = { class: "pseudo button" }  %>
