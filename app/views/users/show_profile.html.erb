@@ -1,4 +1,6 @@
-<% provide(:title, current_user.login) %>
+<% provide(:title, current_user.login + "\'s profile") %>
 <article>
-	<h1>Yes, it is your home page! Hello there, <%= current_user.login %>!</h1>
+  <section>
+  	<h1>Hello there, <%= current_user.login %>!</h1>
+  </section>
 </article>
