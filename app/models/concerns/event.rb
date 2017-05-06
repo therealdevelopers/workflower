@@ -1,4 +1,5 @@
-class Event < Content
+class Event
+	include Content
 	include ActiveModel::Validations
 	
 	attr_accessor :title, :body, :start_time, :end_time

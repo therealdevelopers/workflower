@@ -1,7 +1,7 @@
 require 'oj'
 require 'abstraction'
 
-class Content
+module Content
 	abstract
 	def view
 		Oj.dump(self)
