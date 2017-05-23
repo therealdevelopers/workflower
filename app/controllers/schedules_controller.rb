@@ -22,6 +22,10 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = @parent.schedules.find(params[:id])
+    @events_hash = Hash.new
+    (Week.monday..Week.saturday).each do {|n|
+      @events_hash[n] = @schedule.timeline[day: n]
+    }
   end
 
   def destroy
