@@ -1,3 +1,12 @@
 <article>
-      hi
+<%= form_for @schedule, url: new_user_schedule_path do |f| %>
+    <fieldset class="flex third center">
+      <label>
+        <%= f.text_field :title, options = { class: "", placeholder: "Title" } %>
+      </label>
+      <label>
+        <%= f.submit "Create", :class => "button" %>
+      </label>
+    </fieldset>
+  <% end %>
 </article>
