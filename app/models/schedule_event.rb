@@ -4,7 +4,7 @@ class ScheduleEvent < Event
 
   field :day, 			type: Integer
   field :start_time, 	type: DateTime
-  field :end_time, 		type: DateTime, default: nil
+  field :end_time, 		type: DateTime
 
   embedded_in :timeline
 end
