@@ -1,6 +1,6 @@
 <article>
 	<% if @schedules.empty? %>
-		You have not any schedules yet. <%= link_to 'Make the new one!', new_user_schedule_path %>
+		You have not any schedules yet. Make the <%= link_to 'new one', new_user_schedule_path, html_options = { class: "" } %>!
 	<% else %>
 		This is your schedules:
 		<ul>
