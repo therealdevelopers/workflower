@@ -12,12 +12,12 @@
       <div class="cell row1 col6">Friday</div>
       <div class="cell row1 col7">Saturday</div>
       
-      <%= @monday = @events_hash[Week.monday] %>
-      <%= @tuesday = @events_hash[Week.tuesday] %>
-      <%= @wednesday = @events_hash[Week.wednesday] %>
-      <%= @thursday = @events_hash[Week.thursday] %>
-      <%= @friday = @events_hash[Week.friday] %>
-      <%= @saturday = @events_hash[Week.saturday] %>
+      <% @monday = @events_hash[Week.monday] %>
+      <% @tuesday = @events_hash[Week.tuesday] %>
+      <% @wednesday = @events_hash[Week.wednesday] %>
+      <% @thursday = @events_hash[Week.thursday] %>
+      <% @friday = @events_hash[Week.friday] %>
+      <% @saturday = @events_hash[Week.saturday] %>
 
       <div class="cell row2 col1">1</div>
       <div class="item row2 col2"><%= render "events/show", locals: {event: @monday[1]} %></div>
