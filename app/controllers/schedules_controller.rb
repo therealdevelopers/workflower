@@ -14,7 +14,7 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    @schedule = @parent.schedules.first {|s| s.id == params[:id]}
+    @schedule = @parent.schedules.find {|s| s.id == params[:id]}.first
   end
 
   def destroy
