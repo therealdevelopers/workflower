@@ -4,7 +4,8 @@ class Schedule
   
   field 		:title,		type: String
   embeds_one 	:timeline
-
+  embedded_in 	:user
+  
   def <<(schedule_event)
   	timeline ||= Timeline.new
 
