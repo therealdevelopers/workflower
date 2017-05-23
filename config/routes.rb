@@ -27,12 +27,14 @@ Rails.application.routes.draw do
   
   root :to => 'home#index'
 
-  resources :users, only: [:edit, :update, :destroy] do
-    resources :schedules, only: [:index, :show, :edit, :update, :destroy, :new, :create]
-    collection do
-      get 'groups' => 'users#groups'
-    end
-  end
+resources :users, only: [:edit, :update, :destroy] do
+resources :schedules, only: [:index, :show, :edit, :update, :destroy, :new, :create] do
+resources :events, only: [:index, :show, :edit, :update, :destroy, :new, :create]
+end
+collection do
+get 'groups' => 'users#groups'
+end
+end
 
   resources :groups, only: [:edit, :update, :destroy, :new, :create] do
     resources :schedules, only: [:index, :show, :edit, :update, :destroy, :new, :create]
