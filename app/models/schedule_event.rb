@@ -3,8 +3,8 @@ class ScheduleEvent < Event
   include Mongoid::Attributes::Dynamic
 
   field :day, 			type: Integer
-  field :start_time, 	type: DateTime
-  field :end_time, 		type: DateTime
+  field :start_time, 	type: Time
+  field :end_time, 		type: Time
 
   embedded_in :timeline
 end

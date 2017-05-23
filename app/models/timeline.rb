@@ -6,7 +6,7 @@ class Timeline
   embeds_many :schedule_events
 
   def [](options = {})
-  	self.schedule_events.where(options).order_by(start_time: :asc)
+  	self.schedule_events.where(options).order_by(start_time: :asc).to_a
   end
 
   def <<(event)
