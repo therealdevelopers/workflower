@@ -1,6 +1,8 @@
 <article>
   <% if @event %>
     <%= event.title %>
+    <%= event.body %>
+    <%= event.start_time.to_s("hh:mm") - event.end_time.to_s("hh:mm") %>
   <% else %>
     
   <% end %>
