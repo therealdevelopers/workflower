@@ -11,6 +11,7 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(new_schedule_params)
+    @schedule.timeline = Timeline.new
     @parent.schedules.push @schedule
     if @parent.save
       @schedules = @parent.schedules
