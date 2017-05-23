@@ -10,13 +10,12 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    #byebug
-    @parent.schedules.push Schedule.new(new_schedule_params)
+    @schedule = Schedule.new(new_schedule_params)
+    @parent.schedules.push @schedule
     if @parent.save
       @schedules = @parent.schedules
       render 'index'
     else
-      @schedule = Schedule.new
       render 'new'
     end
   end
@@ -38,7 +37,7 @@ class SchedulesController < ApplicationController
   def find_parent
     params.each do |name, value|
       if name =~ /(.+)_id$/
-        @parent = $1.classify.constantize.find(value)
+        @parent = $1.classify.constantize.find(value) unless @parent
       end
     end
   end
