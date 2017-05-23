@@ -10,9 +10,15 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @parent.schedules << @schedule
-    @schedules = @parent.schedules
-    render 'index'
+    byebug
+    @parent.schedules.push Schedule.new(new_schedule_params)
+    if @parent.save
+      @schedules = @parent.schedules
+      render 'index'
+    else
+      @schedule = Schedule.new
+      render 'new'
+    end
   end
 
   def show
@@ -35,5 +41,10 @@ class SchedulesController < ApplicationController
         @parent = $1.classify.constantize.find(value)
       end
     end
+  end
+
+  def new_schedule_params
+    params.require(:schedule)
+      .permit(:title)
   end 
 end
