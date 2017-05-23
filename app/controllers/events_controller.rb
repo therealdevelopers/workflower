@@ -18,7 +18,7 @@ def create
   @schedule = @user.schedules.find(o[:schedule_id])
   @schedule.timeline.schedule_events.push ScheduleEvent.new(new_schedule_event_params)
   if @schedule.save && @user.save
-  	byebug
+  	#byebug
   	redirect_to user_schedule_path(user_id: o[:user_id], id: o[:schedule_id])
   else
   	render 'new'

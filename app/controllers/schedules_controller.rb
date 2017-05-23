@@ -27,6 +27,7 @@ class SchedulesController < ApplicationController
     (Week.monday..Week.saturday).each do |n|
       @events_hash[n] = @schedule.timeline[day: n]
     end
+    #byebug
   end
 
   def destroy
