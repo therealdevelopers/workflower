@@ -1,6 +1,7 @@
 class Grid
 	include ActiveModel::Validations
-
+	include ActAsContent
+	
 	def initialize(max_x, max_y)
 		@max_x = max_y
 		@max_y = max_y

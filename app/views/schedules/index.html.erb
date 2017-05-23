@@ -1,12 +1,12 @@
 <article>
 	<% if @schedules.empty? %>
-		You have not any schedules yet. Make the new one!
+		You have not any schedules yet. <%= link_to 'Make the new one!', new_user_schedule_path %>
 	<% else %>
 		This is your schedules:
 		<ul>
 			<% @schedules.each do |schedule|%>
 				<li>
-					<%= schedule.title %>
+					<%= link_to schedule.title, user_schedule(user_id: current_user.id, schedule_id: schedule.id) %>
 				</li>
 			<% end %>
 		</ul>

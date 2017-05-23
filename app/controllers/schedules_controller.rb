@@ -9,9 +9,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.new
   end
 
-  def create 
-    render 'new' unless @schedule.valid?
-
+  def create
     @parent.schedules << @schedule
   end
 

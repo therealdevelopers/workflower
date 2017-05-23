@@ -1,8 +1,6 @@
 require 'oj'
-require 'abstraction'
 
-module Content
-	abstract
+module ActAsContent
 	def view
 		Oj.dump(self)
 	end
