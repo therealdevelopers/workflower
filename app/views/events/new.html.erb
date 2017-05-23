@@ -1,0 +1,18 @@
+<article>
+<%= form_for @schedule_event, url: user_schedule_event_path(user_id: current_user.id, schedule_id: @schedule_id, event_type: 'ScheduleEvent') do |f| %>
+    <fieldset class="flex third center">
+      <label>
+        <%= f.text_field :day, options = { class: "", placeholder: "" } %>
+      </label>
+      <label>
+        <%= f.text_field :start_time, options = { class: "", placeholder: "" } %>
+      </label>
+      <label>
+        <%= f.text_field :end_time, options = { class: "", placeholder: "" } %>
+      </label>
+      <label>
+        <%= f.submit "Create", :class => "button" %>
+      </label>
+    </fieldset>
+  <% end %>
+</article>
