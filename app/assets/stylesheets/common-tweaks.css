@@ -17,10 +17,12 @@
 
 /* Validation */
 .validation-errors {
-  list-style: none;
+  font-size: 12pt;
+  --list-style: none;
+  list-style-type: "– ";
   margin-bottom: 0;
   color: #FF4136;
-  padding-left: 0;
+  padding-left: 30px;
 }
 
 .validation-errors > li {
