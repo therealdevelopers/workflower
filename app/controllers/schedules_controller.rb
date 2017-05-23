@@ -11,6 +11,8 @@ class SchedulesController < ApplicationController
 
   def create
     @parent.schedules << @schedule
+    @schedules = @parent.schedules
+    render 'index'
   end
 
   def show
