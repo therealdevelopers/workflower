@@ -1,8 +1,7 @@
 class EventsController < ApplicationController
 
 def new
-  @event = params[:event_type].constantize.new
-  @event_type = params[:event_type].constantize.new
+  @event = ScheduleEvent.new
   @schedule_id = params[:schedule_id]
 end
 
@@ -15,7 +14,7 @@ def create
   params[:end_time] = Time.gm(1970, "jan", 1, end_h, end_m, 0)
   @user = User.find(id: params[:user_id])
   @schedule = @user.schedules.find(id: params[:schedule_id])
-  @schedule << params[:event_type].constantize.new(new_schedule_event_params)
+  @schedule << ScheduleEvent.new(new_schedule_event_params)
 end
 
 def show
