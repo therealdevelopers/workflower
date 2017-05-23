@@ -32,7 +32,7 @@ class User
   EMAIL_REGEXP          = /\A.+@.+\z/
   EMAIL_REGEXP_MSG      = "should be a email address, lol."
 
-#fields & fields
+#fields
   field                   :email
   field                   :login
   field                   :image,                   type:   BSON::Binary
@@ -63,24 +63,24 @@ class User
                 #on:           [:create, :update]
 
 
-  validates     :password,
-                length: {
-                  within:     PASS_LENGTH_MIN..PASS_LENGTH_MAX,
-                  too_short:  PASS_LENGTH_MIN_MSG,
-                  too_long:   PASS_LENGTH_MAX_MSG
-                  },
-                confirmation: true#,
-                #on:           [:create, :update]
+  #validates     :password,
+  #              length: {
+  #                within:     PASS_LENGTH_MIN..PASS_LENGTH_MAX,
+  #                too_short:  PASS_LENGTH_MIN_MSG,
+  #                too_long:   PASS_LENGTH_MAX_MSG
+  #                },
+  #              confirmation: true#,
+  #              #on:           [:create, :update]
 
-  validates :password_confirmation, 
-            presence:         true
+  #validates :password_confirmation, 
+  #          presence:         true
 
-  validates     :image,
-                length: {
-                  maximum:    IMAGE_SIZE_MAX,
-                  message:    IMAGE_SIZE_MAX_MSG
-                  }#,
-                #on:           [:create, :update]
+  #validates     :image,
+  #              length: {
+  #                maximum:    IMAGE_SIZE_MAX,
+  #                message:    IMAGE_SIZE_MAX_MSG
+  #                }#,
+  #              #on:           [:create, :update]
 
   validates     :email,
                 uniqueness:   true,
@@ -89,7 +89,7 @@ class User
                   }#,   
                 #on:           [:create, :update]
 
-  validates_associated :name, :link, :schedules#,
+  #validates_associated :name, :link#, :schedules#,
                 #on:           :create
 
   #validates                  :custom_validation, 
