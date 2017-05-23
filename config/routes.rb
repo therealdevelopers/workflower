@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-get 'createschedule' => 'schedules#create'
-
   get   'credits'           => 'pages#credits'
 
   get   'signin'            => 'sessions#new'

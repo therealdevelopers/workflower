@@ -15,6 +15,18 @@
   width: 300px;
 }
 
+/* Validation */
+.validation-errors {
+  list-style: none;
+  margin-bottom: 0;
+  color: #FF4136;
+  padding-left: 0;
+}
+
+.validation-errors > li {
+  margin-bottom: 0;
+}
+
 
 /* Schedule grid */
 
