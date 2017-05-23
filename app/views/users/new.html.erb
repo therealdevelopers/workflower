@@ -5,11 +5,18 @@
     <fieldset class="flex third center">
       <label>
         <%= f.text_field :email, options = { class: "", placeholder: "Email" } %>
+        <% if @user.errors[:email].any? %>
+          <ul class="validation-errors">
+            <% for email_error in @user.errors[:email] %>
+              <li><%= email_error %></li>
+            <% end %>
+          </ul>
+        <% end %>
       </label>
       <label>
         <%= f.text_field :login, options = { class: "", placeholder: "Login" }  %>
         <% if @user.errors[:login].any? %>
-          <ul>
+          <ul class="validation-errors">
             <% for login_error in @user.errors[:login] %>
               <li><%= login_error %></li>
             <% end %>
@@ -18,9 +25,23 @@
       </label>
       <label>
         <%= f.password_field :password, options = { class: "", placeholder: "Password" } %>
+        <% if @user.errors[:password].any? %>
+          <ul class="validation-errors">
+            <% for password_error in @user.errors[:password] %>
+              <li><%= password_error %></li>
+            <% end %>
+          </ul>
+        <% end %>
       </label>
       <label>
         <%= f.password_field :password_confirmation, options = { class: "", placeholder: "Password Confirmation" } %>
+        <% if @user.errors[:password_confirmation].any? %>
+          <ul class="validation-errors">
+            <% for password_confirmation_error in @user.errors[:password_confirmation] %>
+              <li><%= password_confirmation_error %></li>
+            <% end %>
+          </ul>
+        <% end %>
       </label>
       <label>
         <%= f.submit "Sign Up", :class => "button" %>
