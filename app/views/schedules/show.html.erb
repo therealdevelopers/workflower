@@ -1,7 +1,7 @@
 <article>
   <h2>
     <%= @schedule.title %>
-    <%= link_to 'add', new_user_schedule_event_path(user_id: current_user.id, schedule_id: @schedule.id, type: 'ScheduleEvent'), html_options = { class: "label" } %></h2>
+    <%= link_to 'add', new_user_schedule_event_path(user_id: current_user.id, schedule_id: @schedule.id), html_options = { class: "label" } %></h2>
   <div class="grid">
     <div class="cell grid-header">header</div>
       <div class="cell row1 col1"></div>
