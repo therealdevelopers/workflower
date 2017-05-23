@@ -7,8 +7,6 @@ class Schedule
   embedded_in 	:user
   
   def <<(schedule_event)
-  	timeline ||= Timeline.new
-
-  	timeline << schedule_event if schedule_event.is_a? ScheduleEvent
+  	timeline.schedule_events.push schedule_event
   end
 end

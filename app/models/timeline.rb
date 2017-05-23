@@ -10,6 +10,10 @@ class Timeline
   end
 
   def <<(event)
-  	self.schedule_events.push(event) if event.is_a? ScheduleEvent
+  	self.schedule_events.push(event)
+  end
+
+  def events
+    self.schedule_events
   end
 end
