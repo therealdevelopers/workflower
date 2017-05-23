@@ -6,7 +6,7 @@ def new
 end
 
 def create
-  byebug
+  # byebug
   start_h, start_m = params[:start_time].split(":")
   end_h, end_m = params[:end_time].split(":")
 
