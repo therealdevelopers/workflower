@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    byebug
+    #byebug
     @parent.schedules.push Schedule.new(new_schedule_params)
     if @parent.save
       @schedules = @parent.schedules
@@ -22,7 +22,7 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    @schedule = @parent.schedules.find {|s| s.id == params[:id]}.first
+    @schedule = @parent.schedules.first {|s| s.id == params[:id]}
   end
 
   def destroy
