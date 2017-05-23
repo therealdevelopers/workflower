@@ -24,17 +24,35 @@
         grid-gap: 1px;
         font-family: monospace;
         font-weight: bold;
+        justify-items: stretch;
+        align-items: stretch;
+        justify-content: stretch;
+        grid-template-columns: 40px auto auto auto auto auto auto;
+        grid-template-rows: 40px;
     }
 
     .item {
         border-radius: 4px;
         padding: 10px;
-        background: #fa3;
+        background: #DDDDDD;
+        transition: opacity 0.5s;
+    }
+
+    .cell {
+        border-radius: 4px;
+        color: #DDDDDD;
+        padding: 10px;
+        background:  #0074D9;
         transition: opacity 0.5s;
     }
 
     .item:hover {
       opacity: 0.6;
+    }
+
+    .cell.col1 {
+      text-align: center;
+    
     }
 
     .row1 { grid-row: 2; }
@@ -58,8 +76,10 @@
     }
 
     .grid-header, .grid-footer {
+      display: none;
       grid-column: span 7;
-      background: #c3f;
+      color: #DDDDDD;
+      background: #001F3F;
     }
 
     .grid-header {
