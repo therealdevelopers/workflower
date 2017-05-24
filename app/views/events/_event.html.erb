@@ -1,0 +1,9 @@
+<article>
+  <% if event %>
+    <%= event.title %><br />
+    <%= event.body %><br />
+    <%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %>
+  <% else %>
+
+  <% end %>
+</article>

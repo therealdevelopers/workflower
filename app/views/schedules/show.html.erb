@@ -20,44 +20,44 @@
       <% @saturday = @events_hash[Week.saturday] %>
 
       <div class="cell row2 col1">1</div>
-      <div class="item row2 col2"><%= render "events/show", locals: {event: @monday[1]} %></div>
-      <div class="item row2 col3"><%= render "events/show", locals: {event: @tuesday[1]} %></div>
-      <div class="item row2 col4"><%= render "events/show", locals: {event: @wednesday[1]} %></div>
-      <div class="item row2 col5"><%= render "events/show", locals: {event: @thursday[1]} %></div>
-      <div class="item row2 col6"><%= render "events/show", locals: {event: @friday[1]} %></div>
-      <div class="item row2 col7"><%= render "events/show", locals: {event: @saturday[1]} %></div>
+      <div class="item row2 col2"><%= render partial: "events/event", object: @monday[0] %></div>
+      <div class="item row2 col3"><%= render partial: "events/event", object: @tuesday[0] %></div>
+      <div class="item row2 col4"><%= render partial: "events/event", object: @wednesday[0] %></div>
+      <div class="item row2 col5"><%= render partial: "events/event", object: @thursday[0] %></div>
+      <div class="item row2 col6"><%= render partial: "events/event", object: @friday[0] %></div>
+      <div class="item row2 col7"><%= render partial: "events/event", object: @saturday[0] %></div>
       
       <div class="cell row3 col1">2</div>
-      <div class="item row3 col2"><%= render "events/show", locals: {event: @monday[2]} %></div>
-      <div class="item row3 col3"><%= render "events/show", locals: {event: @tuesday[2]} %></div>
-      <div class="item row3 col4"><%= render "events/show", locals: {event: @wednesday[2]} %></div>
-      <div class="item row3 col5"><%= render "events/show", locals: {event: @thursday[2]} %></div>
-      <div class="item row3 col6"><%= render "events/show", locals: {event: @friday[2]} %></div>
-      <div class="item row3 col7"><%= render "events/show", locals: {event: @saturday[2]} %></div>
+      <div class="item row3 col2"><%= render partial: "events/event", object: @monday[1] %></div>
+      <div class="item row3 col3"><%= render partial: "events/event", object: @tuesday[1] %></div>
+      <div class="item row3 col4"><%= render partial: "events/event", object: @wednesday[1] %></div>
+      <div class="item row3 col5"><%= render partial: "events/event", object: @thursday[1] %></div>
+      <div class="item row3 col6"><%= render partial: "events/event", object: @friday[1] %></div>
+      <div class="item row3 col7"><%= render partial: "events/event", object: @saturday[1] %></div>
       
       <div class="cell row4 col1">3</div>
-      <div class="item row4 col2"><%= render "events/show", locals: {event: @monday[3]} %></div>
-      <div class="item row4 col3"><%= render "events/show", locals: {event: @tuesday[3]} %></div>
-      <div class="item row4 col4"><%= render "events/show", locals: {event: @wednesday[3]} %></div>
-      <div class="item row4 col5"><%= render "events/show", locals: {event: @thursday[3]} %></div>
-      <div class="item row4 col6"><%= render "events/show", locals: {event: @friday[3]} %></div>
-      <div class="item row4 col7"><%= render "events/show", locals: {event: @saturday[3]} %></div>
+      <div class="item row4 col2"><%= render partial: "events/event", object: @monday[2] %></div>
+      <div class="item row4 col3"><%= render partial: "events/event", object: @tuesday[2] %></div>
+      <div class="item row4 col4"><%= render partial: "events/event", object: @wednesday[2] %></div>
+      <div class="item row4 col5"><%= render partial: "events/event", object: @thursday[2] %></div>
+      <div class="item row4 col6"><%= render partial: "events/event", object: @friday[2] %></div>
+      <div class="item row4 col7"><%= render partial: "events/event", object: @saturday[2] %></div>
       
       <div class="cell row5 col1">4</div>
-      <div class="item row5 col2"><%= render "events/show", locals: {event: @monday[4]} %></div>
-      <div class="item row5 col3"><%= render "events/show", locals: {event: @tuesday[4]} %></div>
-      <div class="item row5 col4"><%= render "events/show", locals: {event: @wednesday[4]} %></div>
-      <div class="item row5 col5"><%= render "events/show", locals: {event: @thursday[4]} %></div>
-      <div class="item row5 col6"><%= render "events/show", locals: {event: @friday[4]} %></div>
-      <div class="item row5 col7"><%= render "events/show", locals: {event: @saturday[4]} %></div>
+      <div class="item row5 col2"><%= render partial: "events/event", object: @monday[3] %></div>
+      <div class="item row5 col3"><%= render partial: "events/event", object: @tuesday[3] %></div>
+      <div class="item row5 col4"><%= render partial: "events/event", object: @wednesday[3] %></div>
+      <div class="item row5 col5"><%= render partial: "events/event", object: @thursday[3] %></div>
+      <div class="item row5 col6"><%= render partial: "events/event", object: @friday[3] %></div>
+      <div class="item row5 col7"><%= render partial: "events/event", object: @saturday[3] %></div>
 
       <div class="cell row6 col1">5</div>
-      <div class="item row6 col2"><%= render "events/show", locals: {event: @monday[5]} %></div>
-      <div class="item row6 col3"><%= render "events/show", locals: {event: @tuesday[5]} %></div>
-      <div class="item row6 col4"><%= render "events/show", locals: {event: @wednesday[5]} %></div>
-      <div class="item row6 col5"><%= render "events/show", locals: {event: @thursday[5]} %></div>
-      <div class="item row6 col6"><%= render "events/show", locals: {event: @friday[5]} %></div>
-      <div class="item row6 col7"><%= render "events/show", locals: {event: @saturday[5]} %></div>
+      <div class="item row6 col2"><%= render partial: "events/event", object: @monday[4] %></div>
+      <div class="item row6 col3"><%= render partial: "events/event", object: @tuesday[4] %></div>
+      <div class="item row6 col4"><%= render partial: "events/event", object: @wednesday[4] %></div>
+      <div class="item row6 col5"><%= render partial: "events/event", object: @thursday[4] %></div>
+      <div class="item row6 col6"><%= render partial: "events/event", object: @friday[4] %></div>
+      <div class="item row6 col7"><%= render partial: "events/event", object: @saturday[4] %></div>
 
       <div class="cell grid-footer">footer</div>
     </div>
