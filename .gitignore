@@ -9,3 +9,5 @@ log/
 Gemfile\.lock
 
 *.cache
+
+\.byebug_history
