@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+include TimeHelper
 
 def new
   @event = ScheduleEvent.new
@@ -6,27 +7,21 @@ def new
 end
 
 def create
-  
   p = new_schedule_event_params
   o = outer_params
-  start_h, start_m = p[:start_time].split(":")
-  end_h, end_m = p[:end_time].split(":")
-  
-  p[:start_time] = Time.mktime(1970, "jan", 1, start_h, start_m, 0)
-  p[:end_time] = Time.mktime(1970, "jan", 1, end_h, end_m, 0)
+
+  p[:start_time], p[:end_time] = make_time(p[:start_time]), make_time(p[:end_time])
+
   @user = User.find(o[:user_id])
   @schedule = @user.schedules.find(o[:schedule_id])
-  @schedule.timeline.schedule_events.push ScheduleEvent.new(new_schedule_event_params)
-  if @schedule.save && @user.save
-  	#byebug
+
+  @schedule.timeline.schedule_events.push ScheduleEvent.new(p)
+  
+  if @user.save
   	redirect_to user_schedule_path(user_id: o[:user_id], id: o[:schedule_id])
   else
   	render 'new'
   end
-end
-
-def show
-  @event = params[:event] if params[:event]
 end
 
 def new_schedule_event_params

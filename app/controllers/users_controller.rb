@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 		end
 	end
 
-
 	def show_profile
 		if(current_user.nil?)
 			redirect_to root_url, notice: "Please, sign in!"

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       log_in user
-      params[:remember_me] == '1' ? remember(user) : forget(user)
+      resolve_remember (params[:remember_me], user)
       redirect_to profile_path
   	else
   	  flash.now.alert = "Invalid login or password!"

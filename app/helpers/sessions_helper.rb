@@ -43,4 +43,8 @@
     	cookies.delete(:user_id)
     	cookies.delete(:remember_token)
   	end
+
+    def resolve_remember(val, user)
+      val == '1' ? remember(user) : forget(user)
+    end
 end
