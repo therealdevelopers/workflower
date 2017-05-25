@@ -41,7 +41,7 @@
         justify-items: stretch;
         align-items: stretch;
         justify-content: stretch;
-        grid-template-columns: 40px auto auto auto auto auto auto;
+        grid-template-columns: 40px auto;
         grid-template-rows: 40px;
     }
 
@@ -49,6 +49,7 @@
         border-radius: 4px;
         padding: 10px;
         background: #DDDDDD;
+        background-color: rgba(221, 221, 221, 0.6);
         transition: opacity 0.5s;
     }
 
