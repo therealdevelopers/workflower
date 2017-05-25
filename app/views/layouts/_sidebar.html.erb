@@ -10,8 +10,7 @@
       <%= link_to 'Schedules', user_schedules_path(user_id: current_user.id), html_options = { class: "pseudo button" } %>
       <%= link_to 'Sign Out', signout_path, html_options = { class: "pseudo button" }  %>
     <% else %>
-      <%= link_to 'Sign Up', signup_path, html_options = { class: "pseudo button" } %>
-      <%= link_to 'Sign In', signin_path, html_options = { class: "pseudo button" } %>
+      <%= link_to 'Registration', signup_path, html_options = { class: "pseudo button" } %>
     <% end %>
   </div>
 </nav>

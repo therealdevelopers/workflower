@@ -1,0 +1,18 @@
+<div>
+      <%= form_tag signin_path, options = { class: "flex one" } do %>
+        <label>
+	 		<%= text_field_tag :identifier, params[:identifier], class: "", placeholder: "Login or Email" %>
+  		</label>
+        <label>
+			<%= password_field_tag :password, nil, class: "", placeholder: "Password" %>  		
+  		</label>
+  		<label>
+    		<%= check_box_tag :remember_me %>
+      		<span class="checkable">Remember me</span>
+      	</label>
+		<%= submit_tag "Sign In", class: "" %>
+		<label>
+			or <%= link_to "Sign Up", signup_path %> 
+		</label>
+	<% end %>
+</div>
