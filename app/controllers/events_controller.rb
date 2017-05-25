@@ -9,7 +9,7 @@ end
 def create
   p = new_schedule_event_params
   o = outer_params
-
+  byebug
   p[:start_time], p[:end_time] = make_time(p[:start_time]), make_time(p[:end_time])
 
   @user = User.find(o[:user_id])
