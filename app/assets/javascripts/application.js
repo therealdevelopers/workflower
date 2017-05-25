@@ -14,3 +14,4 @@
 //= require turbolinks
 //= require appendix
 //= require jquery
+//= require jquery_ujs
