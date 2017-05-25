@@ -2,14 +2,11 @@
 	<% if @schedules.empty? %>
 		<p>You have not any schedules yet. Make the <%= link_to 'first one', new_user_schedule_path, html_options = { class: "" } %>!</p>
 	<% else %>
-		This is your schedules:
-		<ul>
 			<% @schedules.each do |schedule|%>
-				<li>
-					<%= link_to schedule.title, user_schedule_path(user_id: current_user.id, id: schedule.id) %>
-				</li>
+				<p>
+					<%= render partial: 'schedules/schedule_desc', locals: {schedule: schedule} %>
+				</p>
 			<% end %>
-		</ul>
 		<p>Would you like to create <%= link_to 'one more', new_user_schedule_path, html_options = { class: "" } %>?</p>
 	<% end %>
 </article>

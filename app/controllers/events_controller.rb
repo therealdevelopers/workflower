@@ -7,15 +7,14 @@ def new
 end
 
 def create
-  p = new_schedule_event_params
   o = outer_params
-  byebug
-  p[:start_time], p[:end_time] = make_time(p[:start_time]), make_time(p[:end_time])
+
+  
 
   @user = User.find(o[:user_id])
   @schedule = @user.schedules.find(o[:schedule_id])
 
-  @schedule.timeline.schedule_events.push ScheduleEvent.new(p)
+  @schedule.timeline.schedule_events.push ScheduleEvent.new(new_schedule_event_params)
   
   if @user.save
   	redirect_to user_schedule_path(user_id: o[:user_id], id: o[:schedule_id])
@@ -25,6 +24,10 @@ def create
 end
 
 def new_schedule_event_params
+
+  params[:schedule_event][:start_time], params[:schedule_event][:end_time] = 
+    make_time(params[:schedule_event][:start_time]), make_time(params[:schedule_event][:end_time])
+  
   params.require(:schedule_event)
   .permit(:title,
     :body,

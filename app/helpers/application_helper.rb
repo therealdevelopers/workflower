@@ -1,5 +1,5 @@
 module ApplicationHelper
-
+include TimeHelper
 #constants
 	TITLE_BASE = 'Workflower'
 	TITLE_SEPARATOR = ' - '

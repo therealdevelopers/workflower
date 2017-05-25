@@ -30,7 +30,8 @@ class SchedulesController < ApplicationController
   end
 
   def destroy
-    @parent.schedules.destroy(params{:id})
+    @parent.schedules.find(params[:id]).destroy
+    redirect_to action: :index, '#{@parent.class.downcase}_id'.to_sym => @parent.id
   end
 
   private
