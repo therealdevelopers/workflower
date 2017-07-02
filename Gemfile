@@ -9,8 +9,8 @@ gem 'mongoid'
 gem 'bcrypt'
 
 #For JSON serializing
-gem 'oj'
-gem 'abstraction'
+#gem 'oj'
+#gem 'abstraction'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'

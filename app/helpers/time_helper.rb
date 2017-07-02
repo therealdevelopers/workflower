@@ -5,7 +5,6 @@ module TimeHelper
 	end
 
 	def format_time(time)
-		#byebug
 		time.strftime("%H:%M")
 	end
 end

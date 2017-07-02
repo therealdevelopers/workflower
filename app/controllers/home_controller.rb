@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
 	def index
-		redirect_to '/profile' if logged_in?
+		render 'users/show_profile'
 	end
 end
