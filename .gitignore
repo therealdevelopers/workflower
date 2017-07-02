@@ -6,8 +6,6 @@ log/
 
 *.sublime-workspace
 
-Gemfile\.lock
-
 *.cache
 
 \.byebug_history
