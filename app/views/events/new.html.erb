@@ -1,24 +1,24 @@
 <article>
-<%= form_for @event, url: user_schedule_events_path(user_id: current_user.id, schedule_id: @parent_id) do |f| %>
-<fieldset class="flex third center">
-<label>
-<%= f.text_field :title, options = { class: "", placeholder: "Title" } %>
-</label>
-<label>
-<%= f.text_field :body, options = { class: "", placeholder: "Body" } %>
-</label>
-<label>
-<%= f.select :day, [['Monday','1'], ['Tuesday','2'],['Wednesday','3'], ['Thursday', '4'], ['Friday', '5'], ['Saturday', '6']], options = { class: "", placeholder: "Day" } %>
-</label>
-<label>
-<%= f.text_field :start_time, options = { class: "", placeholder: "Start Time" } %>
-</label>
-<label>
-<%= f.text_field :end_time, options = { class: "", placeholder: "End Time" } %>
-</label>
-<label>
-<%= f.submit "Create", :class => "button" %>
-</label>
-</fieldset>
-<% end %>
+  <%= form_for @event, url: user_schedule_events_path(user_id: current_user.id, schedule_id: @parent_id) do |f| %>
+  <fieldset class="flex third center">
+    <label>
+      <%= f.text_field :title, options = { class: "", placeholder: "Title" } %>
+    </label>
+    <label>
+      <%= f.text_field :body, options = { class: "", placeholder: "Body" } %>
+    </label>
+    <label>
+      <%= f.select :day, [['Monday','1'], ['Tuesday','2'],['Wednesday','3'], ['Thursday', '4'], ['Friday', '5'], ['Saturday', '6']], options = { class: "", placeholder: "Day" } %>
+    </label>
+    <label>
+      <%= f.text_field :start_time, options = { class: "", placeholder: "Start Time" } %>
+    </label>
+    <label>
+      <%= f.text_field :end_time, options = { class: "", placeholder: "End Time" } %>
+    </label>
+    <label>
+      <%= f.submit "Create", :class => "button" %>
+    </label>
+  </fieldset>
+  <% end %>
 </article>

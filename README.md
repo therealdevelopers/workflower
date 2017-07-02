@@ -2,10 +2,10 @@
 
 ## Project Deployment
 ### Target Platforms
-- *For local machines*: Debian GNU/Linux-based distributions (Debian 8, Ubuntu 16 and its derivatives). Workflower might work on other Linux-based distributions, but it's not guaranteed.
+- *For local machines*: Debian GNU/Linux-based distributions (Debian 8, Ubuntu 16 and its derivatives). Workflower might work on other Unix-like distributions, but it's not guaranteed.
 
 ### Prerequisites
-You'll need these stuff to run the project:
+Install these components to run the project:
 - **mongoDB** database server v3.4.3;
 - **Node.js** JavaScript runtime v6.10.1 LTS;
 - **Ruby** v2.4.0 or higher;
@@ -34,4 +34,4 @@ Then start the project from its directory:
   $ rails server
 ```
 
-By default, **Workflower** site pages is available on `http://localhost:3000`.
+By default, **Workflower** site pages is available on `localhost:3000`.
