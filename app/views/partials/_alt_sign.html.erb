@@ -10,9 +10,10 @@
 			<%= check_box_tag :remember_me %>
 			<span class="checkable">Remember me</span>
 		</label>
-			<%= submit_tag "Sign In", class: "" %>
 		<label>
-			or <%= link_to "Sign Up", signup_path %> 
+			<%= submit_tag "Sign In", class: "" %>
+			<span style="padding: 0 8px;">or</span>
+			<%= link_to "Sign Up", signup_path, class: "" %> 
 		</label>
 	<% end %>
 </div>
