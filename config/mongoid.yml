@@ -145,3 +145,16 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+production:
+  clients:
+    default:
+      database: 'WF1'
+      hosts:
+        - wf1-shard-00-00-uy27s.mongodb.net:27017
+        - wf1-shard-00-00-uy27s.mongodb.net:27017 
+        - wf1-shard-00-00-uy27s.mongodb.net:27017
+      options:
+        user: produser
+        password: 0385768e771e6e90f62d7559fa5616c618c8198cb4e935debdd1f8dbe1703a33d9731e6b6595c0046624a59b410e43155164d6e5c09f70f15b16b0f0a867c6e6
+        auth_source: admin
+        ssl: true
