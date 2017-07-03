@@ -1,7 +1,10 @@
-<h1><%= schedule.title %></h1>
+<dt><%= schedule.title %>
 
-<p uk-margin>
-<%= link_to 'open', user_schedule_path(user_id: current_user.id, id: schedule.id), class: "uk-button uk-button-default"%>
-<%= link_to 'rename', edit_user_schedule_path(user_id: current_user.id, id: schedule.id), class: "uk-button uk-button-default" %>
-<%= link_to 'delete', user_schedule_path(user_id: current_user.id, id: schedule.id), method: :delete, data: {confirm: 'Are you sure?'}, class: "uk-button uk-button-default" %>
-</p>
+<div class="uk-button-group">
+  <%= link_to 'open', user_schedule_path(user_id: current_user.id, id: schedule.id), class: "uk-button uk-button-default uk-button-small"%>
+  <%= link_to 'rename', edit_user_schedule_path(user_id: current_user.id, id: schedule.id), class: "uk-button uk-button-default uk-button-small" %>
+  <%= link_to 'delete', user_schedule_path(user_id: current_user.id, id: schedule.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "uk-button uk-button-default uk-button-small" %>
+</div>
+</dt>
+<dd>
+</dd>

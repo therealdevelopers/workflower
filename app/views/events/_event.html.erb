@@ -1,9 +1,9 @@
 <div>
-  <% if event %>
-    <%= event.title %><br />
-    <%= event.body %><br />
-    <%= format_time(event.start_time) %> - <%= format_time(event.end_time) %>
-  <% else %>
-
-  <% end %>
+	<% if event %>
+		<%= event.title %><br />
+		<%= event.body %><br />
+		<%= format_time(event.start_time) %> - <%= format_time(event.end_time) %>
+	<% else %>
+		
+	<% end %>
 </div>

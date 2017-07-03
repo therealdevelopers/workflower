@@ -1,17 +1,17 @@
 <nav class="uk-background-primary uk-navbar-container" uk-navbar>
 	<div class="uk-navbar-left">
 		<ul class="uk-navbar-nav">
+			<li><a href="/">Workflower</a></li>
 		</ul>
 	</div>
 	<div class="uk-navbar-right">
 		<ul class="uk-navbar-nav">
-			<li></li>
 			<% if current_user %>
 				<li><%= link_to 'Profile', profile_path %></li>
 				<li><%= link_to 'Schedules', user_schedules_path(user_id: current_user.id) %></li>
-				<li><%= link_to 'Sign Out', signout_path  %></li>
+				<li><%= link_to 'Sign Out', signout_path %></li>
 			<% else %>
-				<li><%= link_to 'Regisration', signup_path %></li>
+				<li><%= link_to 'Registration', signup_path %></li>
 			<% end %>
 		</ul>	 	
 	</div>

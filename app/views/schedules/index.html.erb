@@ -5,11 +5,11 @@
 				<% if @schedules.empty? %>
 				<p>You have not any schedules yet. Make the <%= link_to 'first one', new_user_schedule_path, html_options = { class: "" } %>!</p>
 				<% else %>
-				<% @schedules.each do |schedule|%>
-				<p>
+				<dl class="uk-description-list uk-description-list-divider">
+					<% @schedules.each do |schedule|%>
 					<%= render partial: 'schedules/schedule_desc', locals: {schedule: schedule} %>
-				</p>
-				<% end %>
+					<% end %>
+				</dl>		
 				<p>Would you like to create <%= link_to 'one more', new_user_schedule_path, html_options = { class: "" } %>?</p>
 				<% end %>
 			</div>
