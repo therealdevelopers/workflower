@@ -3,6 +3,6 @@ class Group
   include Mongoid::Attributes::Dynamic
   
   field 					:title
-  has_many					:schedules
+  embeds_many				:schedules, as: :having_schedules
   has_and_belongs_to_many 	:users
 end
