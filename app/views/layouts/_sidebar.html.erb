@@ -6,11 +6,11 @@
   <label for="bmenu" class="burger toggle pseudo button">&#8801;</label>
   <div class="menu">
     <% if current_user %>
-      <%= link_to 'Profile', profile_path, class: "pseudo button" %>
-      <%= link_to 'Schedules', user_schedules_path(user_id: current_user.id), class: "pseudo button" %>
-      <%= link_to 'Sign Out', signout_path, class: "pseudo button"  %>
+      <%= link_to 'Profile', profile_path, html_options = { class: "pseudo button" } %>
+      <%= link_to 'Schedules', user_schedules_path(user_id: current_user.id), html_options = { class: "pseudo button" } %>
+      <%= link_to 'Sign Out', signout_path, html_options = { class: "pseudo button" }  %>
     <% else %>
-      <%= link_to 'Registration', signup_path, class: "pseudo button" %>
+      <%= link_to 'Registration', signup_path, html_options = { class: "pseudo button" } %>
     <% end %>
   </div>
 </nav>

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   get   'credits'           => 'pages#credits'
 
   get   'signin'            => 'sessions#new'
