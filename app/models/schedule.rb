@@ -3,10 +3,6 @@ class Schedule
   include Mongoid::Attributes::Dynamic
   
   field 		:title,		type: String
-  embeds_one 	:timeline
-  embedded_in 	:user
-  
-  def <<(schedule_event)
-  	timeline.schedule_events.push schedule_event
-  end
+  embeds_many	:timespans, as: :having_timespan
+  embedded_in 	:having_schedule, polymorphic: true
 end

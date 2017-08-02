@@ -56,6 +56,7 @@ group :development do
 end
 
 group :test do
+  gem 'factory_girl_rails'
   gem 'mongoid-rspec', github: 'mongoid-rspec/mongoid-rspec'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
