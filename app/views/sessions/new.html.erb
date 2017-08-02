@@ -1,26 +1,28 @@
-<% provide(:title, 'Sign In') %>
-<article>
-	<h1>Sign In</h1>
-	<ul>
-		<% flash.each do |name, msg| %>
-			<li>
-				<%= content_tag :span, msg, :id => "flash_#{name}", class: "" %>
-			</li>
-		<% end %>
-	</ul>
-	<%= form_tag signin_path, options = { class: "center flex third" } do %>
-  	<label>
-	 		<%= text_field_tag :identifier, params[:identifier], class: "", placeholder: "Login or Email" %>
-  	</label>
-  	<label>
-			<%= password_field_tag :password, nil, class: "", placeholder: "Password" %>  		
-  	</label>
-  	<label>
-    	<%= check_box_tag :remember_me %>
-      <span class="checkable">Remember me</span>
-      </label>
-  	<label>
-			<%= submit_tag "Sign In", class: "" %>
-  	</label>
-	<% end %>
-</article>
+<div class="uk-section uk-section-default">
+  <div class="uk-container">
+    <div class="uk-grid-match uk-child-width-1-1@m" uk-grid>
+      <h1>Sign In</h1>
+      <ul>
+        <% flash.each do |name, msg| %>
+          <li>
+            <%= content_tag :span, msg, :id => "flash_#{name}", class: "" %>
+          </li>
+        <% end %>
+      </ul>
+      <%= form_tag signin_path, class: "center flex third" do %>
+        <div class="uk-margin">
+          <%= text_field_tag :identifier, params[:identifier], class: "uk-input", placeholder: "Login or Email" %>
+        </div>
+        <div class="uk-margin">
+          <%= password_field_tag :password, nil, class: "uk-input", placeholder: "Password" %>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+          <label><%= check_box_tag :remember_me, class: "uk-checkbox" %> Remember me</label>
+        </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+          <%= submit_tag "Sign In", class: "uk-button uk-button-default" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
