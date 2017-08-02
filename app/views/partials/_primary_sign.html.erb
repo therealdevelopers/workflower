@@ -1,0 +1,30 @@
+<div class="uk-section uk-section-media uk-light uk-background-cover"  style="background-image: url(pictures/ynp.jpg);">
+	<div class="uk-container">
+		<div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
+			<div>
+				<h1 class="uk-heading-primary">Created for your Tasks</h1>
+				<p>Build your very own schedule to make all the the things just in time!</p>
+				<p><small>some small text to make this section even cooler</small></p>
+			</div>
+			<div>
+				<%= form_tag signin_path do %>
+					<div class="uk-margin">
+						<%= text_field_tag :identifier, params[:identifier], class: "uk-input", placeholder: "Login or Email" %>					
+					</div>
+					<div class="uk-margin">
+						<%= password_field_tag :password, nil, class: "uk-input", placeholder: "Password" %>				
+					</div>
+					<div class="uk-margin">
+						<label>
+						<%= check_box_tag :remember_me, class: "uk-checkbox" %> Remember Me
+						</label>
+					</div>
+					<div class="uk-margin">
+						<%= submit_tag "Sign In", class: "uk-button uk-button-default" %> or <%= link_to "Sign Up", signup_path, class: "uk-button uk-button-default" %>			
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+							

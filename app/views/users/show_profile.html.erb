@@ -1,7 +1,12 @@
-<% provide(:title, current_user.login + "\'s profile") %>
-<article>
-  <section>
-  	<h1 align="center">Hello there, <%= current_user.login %>!</h1>
-  	<p align="center"><%= link_to 'Your schedules here', user_schedules_path(user_id: current_user.id), html_options = { class: "pseudo button" } %></p>
-  </section>
-</article>
+<% provide(:title, current_user.login + "s profile") %>
+
+<div class="uk-section uk-section-default">
+  <div class="uk-container">
+    <div class="uk-grid-match uk-child-width-1-1@m" uk-grid>
+      <div>
+        <h1>Hi there, <%= current_user.login %>!</h1>
+      <!--   <p><%= link_to 'Your schedules here', user_schedules_path(user_id: current_user.id), html_options = { class: "" } %></p> -->
+      </div>
+    </div>
+  </div>
+</div>
