@@ -1,12 +1,18 @@
-<article>
-	<% if @schedules.empty? %>
-		<p>You have not any schedules yet. Make the <%= link_to 'first one', new_user_schedule_path, html_options = { class: "" } %>!</p>
-	<% else %>
-			<% @schedules.each do |schedule|%>
-				<p>
+<div class="uk-section uk-section-default">
+	<div class="uk-container">
+		<div class="uk-grid-match uk-child-width-1-1@m" uk-grid>
+			<div>
+				<% if @schedules.empty? %>
+				<p>You have not any schedules yet. Make the <%= link_to 'first one', new_user_schedule_path, html_options = { class: "" } %>!</p>
+				<% else %>
+				<dl class="uk-description-list uk-description-list-divider">
+					<% @schedules.each do |schedule|%>
 					<%= render partial: 'schedules/schedule_desc', locals: {schedule: schedule} %>
-				</p>
-			<% end %>
-		<p>Would you like to create <%= link_to 'one more', new_user_schedule_path, html_options = { class: "" } %>?</p>
-	<% end %>
-</article>
+					<% end %>
+				</dl>		
+				<p>Would you like to create <%= link_to 'one more', new_user_schedule_path, html_options = { class: "" } %>?</p>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

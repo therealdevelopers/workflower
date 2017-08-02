@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-    <title>
-    	<%= full_title(yield(:title)) %>
-    </title>
-    <%= render 'partials/meta_tags' %>
+		<title>
+			<%= full_title(yield(:title)) %>
+		</title>
+		<%= render 'partials/meta_tags' %>
 	</head>
 	<body>
 		<%= render 'layouts/sidebar' %>
@@ -12,11 +12,8 @@
 			<%= yield %>
 		</main>
 		<footer id="footer">
-			<article>
-				<p>With <span style="color: salmon; font-weight: 800; font-size: 1.2em;">&#10084;</span> from <a href="//github.com/therealdevelopers">the Real Developers</a> and <%= link_to 'others', credits_url, html_options = { class: "" } %>.</p>
-				<p>Workflower, 2017.</p>
-			</article>
+			<%= render 'layouts/footer' %>
 		</footer>
-		<%= javascript_include_tag 'application','data-turbolinks-track': 'reload' %>
+			<%= javascript_include_tag 'application','data-turbolinks-track': 'reload' %>
 	</body>
 </html>

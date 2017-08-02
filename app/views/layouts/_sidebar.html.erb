@@ -1,16 +1,18 @@
-<nav>
-  <a href= <%= root_path %> class="brand">
-    <span>Workflower</span>
-  </a>
-  <input id="bmenu" type="checkbox" class="show" />
-  <label for="bmenu" class="burger toggle pseudo button">&#8801;</label>
-  <div class="menu">
-    <% if current_user %>
-      <%= link_to 'Profile', profile_path, html_options = { class: "pseudo button" } %>
-      <%= link_to 'Schedules', user_schedules_path(user_id: current_user.id), html_options = { class: "pseudo button" } %>
-      <%= link_to 'Sign Out', signout_path, html_options = { class: "pseudo button" }  %>
-    <% else %>
-      <%= link_to 'Registration', signup_path, html_options = { class: "pseudo button" } %>
-    <% end %>
-  </div>
+<nav class="uk-background-primary uk-navbar-container" uk-navbar>
+	<div class="uk-navbar-left">
+		<ul class="uk-navbar-nav">
+			<li><a href="/">Workflower</a></li>
+		</ul>
+	</div>
+	<div class="uk-navbar-right">
+		<ul class="uk-navbar-nav">
+			<% if current_user %>
+				<li><%= link_to 'Profile', profile_path %></li>
+				<li><%= link_to 'Schedules', user_schedules_path(user_id: current_user.id) %></li>
+				<li><%= link_to 'Sign Out', signout_path %></li>
+			<% else %>
+				<li><%= link_to 'Registration', signup_path %></li>
+			<% end %>
+		</ul>	 	
+	</div>
 </nav>
