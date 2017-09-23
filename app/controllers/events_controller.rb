@@ -2,25 +2,16 @@ class EventsController < ApplicationController
 include TimeHelper
 
 def new
-  @event = ScheduleEvent.new
-  @schedule_id = params[:schedule_id]
+  @event = params[:ev_t].classify.constantize.new
+  @parent_id = params[:p_id]
 end
 
 def create
-  o = outer_params
 
-  
+end
 
-  @user = User.find(o[:user_id])
-  @schedule = @user.schedules.find(o[:schedule_id])
+def destroy
 
-  @schedule.timeline.schedule_events.push ScheduleEvent.new(new_schedule_event_params)
-  
-  if @user.save
-  	redirect_to user_schedule_path(user_id: o[:user_id], id: o[:schedule_id])
-  else
-  	render 'new'
-  end
 end
 
 def new_schedule_event_params

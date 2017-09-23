@@ -6,5 +6,5 @@ class ScheduleEvent < Event
   field :start_time, 	type: Time
   field :end_time, 		type: Time
 
-  embedded_in :timeline
+  embedded_in :having_schedule_events, polymorphic: true
 end

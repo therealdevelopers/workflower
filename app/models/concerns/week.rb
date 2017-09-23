@@ -9,23 +9,27 @@ class Week
 		6 => :saturday
 	}
 
-	def self.parse(value)
-		if value.is_a? Integer
-			return @@days[value].to_s
-		elsif value.is_a? String
-			return @@days.invert[value.downcase.to_sym]
-		end
-	end
+	
 
-	def self.[](value)
-		parse(value)
-	end
-
-	def days
-		@@days.to_h
-	end
+	
 
 	class << self
+		def days
+			@@days.to_h
+		end
+
+		def parse(value)
+			if value.is_a? Integer
+				return @@days[value].to_s
+			elsif value.is_a? String
+				return @@days.invert[value.downcase.to_sym]
+			end
+		end
+
+		def [](value)
+			parse(value)
+		end
+
 		def sunday
 			@@days.invert[:sunday]
 		end
@@ -53,5 +57,6 @@ class Week
 		def saturday
 			@@days.invert[:saturday]
 		end
+
 	end
 end 
